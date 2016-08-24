@@ -1,0 +1,47 @@
+/*holds all the styling for the entitre app*/
+
+/*a class for the 2 main content cols fotr paddding*/
+.conColPad{
+    padding-left:70px;
+    padding-right:70px;
+    padding-top:25px;
+    padding-bottom:25px;
+}
+
+/*below code used to allow the 2 columns to alwayds take up the max space*/
+
+@media (min-width: 768px){
+
+    .addCol{
+        flex: 1;
+        border:1px solid black;
+    }
+
+
+    .infoCol{
+        flex: 1;
+        border:1px solid black;
+    }
+
+
+
+    html,body{
+        height:100%;
+    }
+    
+    .container-fluid{
+        border:1px solid blue;
+        height:100%;
+    }
+
+    .mainRow{
+        border:1px solid green;
+        min-height:100%;
+        display:flex;
+    }
+}
+
+
+html,body{
+    border:1px solid red;
+}
