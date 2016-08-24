@@ -45,8 +45,7 @@
                 
                 <div class="col-sm-6 addCol conColPad">
                    
-                    <img src="img/logo.png" alt="Hours Tracker Logo" style="width:100%;
-                    margin-left:auto; margin-right:auto;"> 
+                    <img src="img/logo.png" class="logo" alt="Hours Tracker Logo"> 
 
                     <form style="margin-top:50px;">
                         
@@ -89,11 +88,9 @@
 
                         <br>
 
-                        <span class="glyphicon glyphicon-plus-sign" style="font-size:
-                        40px; color:green;" onclick="addForm()" ></span>
+                        <span class="glyphicon glyphicon-plus-sign addBtn" onclick="addForm()"></span>
                         
-                        <button type="submit" class="btn btn-default"
-                        style="margin-bottom:28px; float:right;" >Calculate</button>
+                        <button type="submit" class="btn btn-default calcBtn" >Calculate</button>
                         
 
 
@@ -101,24 +98,49 @@
                     </form>
 
                 </div>
-
-                <div class="col-sm-6 infoCol conColPad" style="background-color:lightgray;">
                 
-                    <p>orem ipsum dolor sit amet, risus velit curabitur, 
-                    pretium urna, consequat turpis eget amet pede. Ante nam 
-                    nec vulputate malesuada consequat, eros erat dolor facilisis 
-                    ac, sed dolor et arcu rhoncus suspendisse eu, adipiscing et 
-                    arcu nulla, sed massa justo lorem erat wisi nam. Nunc sodales 
-                    ut varius id. In habitasse integer, eleifend amet libero 
-                    enim neque a. Semper pretium fermentum ante auctor at, 
-                    nulla amet ultricies, aliquam enim porta occaecati. Quam in 
-                    praesent cras per congue, sit lorem. Nulla mattis sapien praesent 
-                    consectetuer, eleifend scelerisque diam at erat vitae cras. 
-                    In egestas lorem feugiat eleifend cum, ut a luctus non fermentum 
-                    dolor. Integer sapien torquent nulla, in sagittis augue magna 
-                    elit, nec eget ut suspendisse in, nulla pellentesque non sem 
-                    tristique, varius consequat. Enim donec fringilla, nisl id 
-                    vel magnis convallis lectus.</p>
+                <!--below div holds all the html for displaying the hours in various
+                    formats-->
+                <div class="col-sm-6 infoCol conColPad" style="background-color:lightgray;">
+               
+                    <p><b>Hours Tracker </b>is a very usefull web based application used
+                    to keep track of hours for anyone who tracks hours themselves such as
+                    frelancers or tradesme.<p>
+
+                    <label for="week" style="margin-top:50px;">Hours This Week:</label>
+                    <div class="well well-sm" id="week">45:15HR</div>
+                    
+                    <label for="month">Hours This Month:</label>
+                    <div class="well well-sm" id="month">48:30 hrs</div>
+                    
+
+                    <label for="year">Hours This Year:</label>
+                    <div class="well well-sm" id="year">49:15</div>
+                    
+                    <label for="custom" class="custom">Custom Period:</label>
+                    <div class="well well-sm" id="custom">49:15</div>
+                    
+                    <form>
+
+                        <div class="form-group">
+
+                            <label for="startDate">Start Date:</label>
+
+                            <input type="date" name="daysDate" class="form-control" 
+                            id="startDate" required>
+
+                            <label for="endDate">endDate:</label>
+
+                            <input type="date" name="daysDate" class="form-control" 
+                            id="endDate" required>
+
+                        </div>
+
+                        <button type="submit" class="btn btn-default">Select
+                            Period</button>
+
+                    </form>
+
 
                 </div>
 
@@ -130,3 +152,43 @@
     </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>
+

@@ -1,26 +1,24 @@
 /*holds all the styling for the entitre app*/
 
-/*a class for the 2 main content cols fotr paddding*/
+/*a class for the 2 main content cols for paddding*/
 .conColPad{
     padding-left:70px;
     padding-right:70px;
-    padding-top:25px;
     padding-bottom:25px;
 }
 
 /*below code used to allow the 2 columns to alwayds take up the max space*/
-
+/*also addds a shadow rightside*/
 @media (min-width: 768px){
 
     .addCol{
         flex: 1;
-        border:1px solid black;
     }
 
 
     .infoCol{
         flex: 1;
-        border:1px solid black;
+        box-shadow:-1px 0px 7px black;
     }
 
 
@@ -30,18 +28,51 @@
     }
     
     .container-fluid{
-        border:1px solid blue;
         height:100%;
     }
 
     .mainRow{
-        border:1px solid green;
         min-height:100%;
         display:flex;
     }
 }
 
+/*SPECIFIC STYLES*/
 
-html,body{
-    border:1px solid red;
+
+/*column for adding the hours*/
+.addCol{
+    padding-top:25px;
 }
+
+/*main page logo*/
+.logo{
+    width:100%;
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+/*for the button that adds another fors for hours*/
+.addBtn{
+     font-size:40px; 
+     color:green; 
+ }
+
+ /*for the calculate button*/
+ .calcBtn{
+     margin-bottom:28px; 
+     float:right;
+ }
+
+/*column displaying the hours*/
+.infoCol{
+    text-align:center;
+    padding-top:50px;
+}
+
+/*styles for the custom period label*/
+.custom{
+    margin-top:50px;
+}
+
+
