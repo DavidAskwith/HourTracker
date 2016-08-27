@@ -21,7 +21,7 @@ $(function() {
 
         $.ajax({
             type: "POST",
-            url: "php/formProcessing.php",
+            url: "php/dbProcessing.php",
             data: formData,
             success: function() {
 
