@@ -51,7 +51,7 @@
                    
                     <img src="img/logo.png" class="logo" alt="Hours Tracker Logo"> 
 
-                    <form style="margin-top:50px;">
+                    <form style="margin-top:50px;"> 
                         
                         <div id="hrsContainer">
 
@@ -60,7 +60,7 @@
                                 <label for="daysDate">The Days Date:</label>
 
                                 <input type="date" name="daysDate" class="form-control" 
-                                id="daysDate" required>
+                                    id="daysDate" required>
 
                             </div>
 
@@ -72,7 +72,7 @@
                                     <label for="startTime">Start Time:</label>
 
                                     <input type="time" name="startTime" class="form-control"
-                                    id="startTime" required>
+                                        id="startTime" required>
 
                                 </div>
                             
@@ -82,7 +82,7 @@
                                     <label for="endTime">End Time:</label>
 
                                     <input type="time" name="endTime" class="form-control"
-                                    id="endTime" required> 
+                                        id="endTime" required> 
 
                                 </div>
                             
@@ -92,9 +92,11 @@
 
                         <br>
 
-                        <span class="glyphicon glyphicon-plus-sign addBtn" onclick="addForm()"></span>
+                        <span class="glyphicon glyphicon-plus-sign addBtn" onclick="addForm()"> 
+                            </span>
                         
-                        <button type="submit" class="btn btn-default calcBtn" >Calculate</button>
+                        <button type="submit" value="submit" id="calcBtn" class="btn btn-default calcBtn"> 
+                            Calculate </button>
                         
 
 
@@ -105,7 +107,7 @@
                 
                 <!--below div holds all the html for displaying the hours in various
                     formats-->
-                <div class="col-sm-6 infoCol conColPad" style="background-color:lightgray;">
+                <div class="col-sm-6 infoCol conColPad">
                
                     <p><b>Hours Tracker </b>is a very usefull web based application used
                     to keep track of hours for anyone who tracks hours themselves such as
@@ -131,12 +133,12 @@
                             <label for="startDate">Start Date:</label>
 
                             <input type="date" name="daysDate" class="form-control" 
-                            id="startDate" required>
+                                id="startDate" required>
 
                             <label for="endDate">endDate:</label>
 
                             <input type="date" name="daysDate" class="form-control" 
-                            id="endDate" required>
+                                id="endDate" required>
 
                         </div>
 

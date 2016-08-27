@@ -61,11 +61,12 @@
  /*for the calculate button*/
  .calcBtn{
      margin-bottom:28px; 
-     float:right;echo expand("%.")
+     float:right;
  }
 
 /*column displaying the hours*/
 .infoCol{
+    background-color:lightgray;
     text-align:center;
     padding-top:50px;
 }
