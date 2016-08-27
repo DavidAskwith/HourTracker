@@ -61,7 +61,7 @@
  /*for the calculate button*/
  .calcBtn{
      margin-bottom:28px; 
-     float:right;
+     float:right;echo expand("%.")
  }
 
 /*column displaying the hours*/
