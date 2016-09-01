@@ -5,25 +5,44 @@
 //this function loads when the html doc loads same as document.ready
 $(function() {
 
-    //runs func when calcBtn is clicked
     $("#calcBtn").click(function() {
         
-        //alert("works");
-        //vars below hold the data from the form
-        var date = $("input#daysDate").val();
-        var startTime = $("input#startTime").val();
-        var endTime = $("input#endTime").val();
-
-        var formData = "date=" + date + "&startTime=" + startTime
-            + "&endTime= " + endTime;
+        alert(formSecCount+" fromSecCount");
         
-        //alert(formData);
+
+        var formData = "";
+
+        //runs through each section of the form sections for adding hours and compiles a
+        //string n the variable above of the the data for posting to the php 
+        //processing page
+        for(i = 0; i <= formSecCount; i++){
+
+            alert(i+" i count");
+
+            var date = $("input#daysDate" + i ).val();
+            var startTime = $("input#startTime" + i ).val();
+            var endTime = $("input#endTime" + i ).val();
+
+            var partFormData="date" + i + "=" + date + "&startTime" + i + "=" + startTime
+                + "&endTime" + i + "=" + endTime;
+            
+            //adds a & if there is more than one set of hours being added
+            (i != formSecCount)?  partFormData += "&" : partFormData += ""; 
+            
+            formData += partFormData;
+
+            
+            alert(partFormData+" partFormData");
+
+        }   
+
+        alert(formData+" formData");
 
         $.ajax({
             type: "POST",
             url: "php/dbProcessing.php",
             data: formData,
-            success: function() {
+            success: function(){
 
                alert("Yours hours have been submitted");
 
@@ -33,7 +52,9 @@ $(function() {
             }
 
         });
+        //this stops page reload
         return false;
+
     });
 
 });
