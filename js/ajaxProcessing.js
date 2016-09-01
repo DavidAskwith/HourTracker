@@ -10,13 +10,9 @@ $(function() {
         alert(formSecCount+" fromSecCount");
         
 
-<<<<<<< HEAD
         //holds the compiled for data plus the count for the number of formSections
         var formData = "formSecCount=" + formSecCount + "&";
-
-=======
-        var formData = "";
->>>>>>> c1f2973c6b09036427166735fb82b335d1e7ffde
+        
 
         //runs through each section of the form sections for adding hours and compiles a
         //string n the variable above of the the data for posting to the php 
