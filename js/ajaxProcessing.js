@@ -7,7 +7,7 @@ $(function() {
 
     $("#calcBtn").click(function() {
         
-        alert(formSecCount+" fromSecCount");
+        //alert(formSecCount+" fromSecCount");
         
 
         //holds the compiled for data plus the count for the number of formSections
@@ -19,13 +19,13 @@ $(function() {
         //processing page
         for(i = 0; i <= formSecCount; i++){
 
-            alert(i+" i count");
+            //alert(i+" i count");
 
             var date = $("input#daysDate" + i ).val();
             var startTime = $("input#startTime" + i ).val();
             var endTime = $("input#endTime" + i ).val();
 
-            var partFormData="date" + i + "=" + date + "&startTime" + i + "=" + startTime
+            var partFormData="daysDate" + i + "=" + date + "&startTime" + i + "=" + startTime
                 + "&endTime" + i + "=" + endTime;
             
             //adds a & if there is more than one set of hours being added
@@ -34,20 +34,19 @@ $(function() {
             formData += partFormData;
 
             
-            alert(partFormData+" partFormData");
+            //alert(partFormData+" partFormData");
 
         }   
 
-        alert(formData+" formData");
+        alert("POST DATA:" + formData);
 
         $.ajax({
             type: "POST",
             url: "php/dbProcessing.php",
             data: formData,
-            success: function(){
+            success: function(data){
 
-               alert("Yours hours have been submitted");
-
+               alert(data);
             },
             error: function(){
                 alert("faccckkk");
@@ -56,7 +55,7 @@ $(function() {
         });
         //this stops page reload
         return false;
-
+        
     });
 
 });
