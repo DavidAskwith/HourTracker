@@ -1,4 +1,4 @@
-// this from is used to perform all ajax actions
+// this file is used to perform all ajax actions
 //
 //this section is usefd to send the data to the formProcesssing php file
 
@@ -42,7 +42,7 @@ $(function() {
 
         $.ajax({
             type: "POST",
-            url: "php/dbProcessing.php",
+            url: "php/formInsert.php",
             data: formData,
             success: function(data){
 
