@@ -53,7 +53,7 @@ for($i = 0; $i <= $formSecCount; $i++){
             
     if ($conn->query($sql) === TRUE) {
 
-       echo "revcorded added\n";
+       echo "record added\n";
 
     } else {
 
@@ -63,5 +63,7 @@ for($i = 0; $i <= $formSecCount; $i++){
 }
 
 $conn->close();
+
+include "formSelect.php";
 
 ?>
