@@ -15,13 +15,13 @@ if ($conn->connect_error) {
 
 
 //TESTING
-echo "conection works\n";
+//echo "conection works\n";
 
 
 $formSecCount = $_POST["formSecCount"];
 
 //TESTING
-echo "Form Section Count: $formSecCount\n"; 
+//echo "Form Section Count: $formSecCount\n"; 
 
 //each varaiable is set to the value held in the section referenced by the
 //formSecCount then they are input into the db
@@ -32,8 +32,7 @@ for($i = 0; $i <= $formSecCount; $i++){
     $endTime = $_POST["endTime$i"];
 
     //TESTING
-
-    echo "Start Time: $startTime\nEnd Time: $endTime\nDays Date: $daysDate\n";
+    //echo "Start Time: $startTime\nEnd Time: $endTime\nDays Date: $daysDate\n";
 
     //used to add suport for hours ending in a new day 
     if($endTime < $startTime) {
@@ -45,7 +44,7 @@ for($i = 0; $i <= $formSecCount; $i++){
     $hoursWorked = $endTime - $startTime;
 
     //TESTING
-    echo "Hours Worked: $hoursWorked\n";
+    //echo "Hours Worked: $hoursWorked\n";
 
     $sql = "INSERT INTO hours_tracker.hours
             (days_date,hours_worked)
@@ -53,7 +52,7 @@ for($i = 0; $i <= $formSecCount; $i++){
             
     if ($conn->query($sql) === TRUE) {
 
-       echo "record added\n";
+        include "formSelect.php";
 
     } else {
 
@@ -64,6 +63,5 @@ for($i = 0; $i <= $formSecCount; $i++){
 
 $conn->close();
 
-include "formSelect.php";
 
 ?>

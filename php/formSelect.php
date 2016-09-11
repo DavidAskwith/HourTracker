@@ -10,6 +10,8 @@ $dbname = "hours_tracker";
 //creates the conection to db
 $conn = new mysqli($servername, $username, $password, $dbname);
 
+//an associative array that holds the hours 
+$hoursArray;
 
 //section for querying for the weeks hours
 $hrsWeek= "SELECT SUM(hours_worked) AS weeksHours
@@ -20,7 +22,7 @@ $resultWeek= $conn->query($hrsWeek);
 
 $rowWeek = $resultWeek->fetch_assoc();
 
-echo "Week Hours: " . $rowWeek["weeksHours"] . "\n";
+$hoursArray["weeksHours"] = $rowWeek["weeksHours"];
 
 
 //section for query for the months hrs
@@ -32,7 +34,7 @@ $resultMonth = $conn->query($hrsMonth);
 
 $rowMonth = $resultMonth->fetch_assoc();
 
-echo "Months Hours: " . $rowMonth["monthsHours"] . "\n";
+$hoursArray["monthsHours"] = $rowMonth["monthsHours"];
 
 
 //section for the querying the years hours
@@ -44,10 +46,14 @@ $resultYear = $conn->query($hrsYear);
 
 $rowYear = $resultYear->fetch_assoc();
 
-echo "Years Hours: " . $rowYear["yearsHours"] . "\n";
+$hoursArray["yearsHours"] = $rowYear["yearsHours"];
 
 
 $conn->close();
+
+
+//returns the array as json 
+echo json_encode($hoursArray);
 
 ?>
 

@@ -5,6 +5,23 @@
 //this function loads when the html doc loads same as document.ready
 $(function() {
 
+    //loadds the data from the db on the pages load
+    $.ajax({
+        type: "POST",
+        url: "php/formSelect.php",
+        data: "",
+        dataType: "json",
+        success: function(data){
+               
+        //inserts the returned data from the db to the index.html page 
+        document.getElementById("week").innerHTML = data["weeksHours"];
+        document.getElementById("month").innerHTML = data["monthsHours"];
+        document.getElementById("year").innerHTML = data["yearsHours"];
+
+        }
+
+    });
+
     $("#calcBtn").click(function() {
         
         //alert(formSecCount+" fromSecCount");
@@ -44,9 +61,14 @@ $(function() {
             type: "POST",
             url: "php/formInsert.php",
             data: formData,
+            dataType: "json",
             success: function(data){
+               
+               //inserts the returned data from the db to the index.html page 
+               document.getElementById("week").innerHTML = data["weeksHours"];
+               document.getElementById("month").innerHTML = data["monthsHours"];
+               document.getElementById("year").innerHTML = data["yearsHours"];
 
-               alert(data);
             },
             error: function(){
                 alert("faccckkk");
