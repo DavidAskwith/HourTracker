@@ -1,161 +1,156 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
+<head>
 
-        <title>Hours Calculator</title>
+   <title>Hours Calculator</title>
 
-        <!--CDN's BELOW-->
-        <!--cdn for jquery-->
-        <script
-        src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <!--CDN's BELOW-->
+   <!--cdn for jquery-->
+   <script
+   src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-        <!--CDN's for B.S. below-->
-        <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
-        crossorigin="anonymous">
+   <!--CDN's for B.S. below-->
+   <link rel="stylesheet"
+   href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+   integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+   crossorigin="anonymous">
 
-		<script
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
-		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
-		crossorigin="anonymous"></script>
-
-        
-        <!--MY LINKS BELOW-->
-        <!--link to the pages style sheet-->
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-
-        <!--link to the js script for adding a hours form-->
-        <script src="js/addHrsForm.js"></script>
-        
-        <!--link to the js script for adding a hours form-->
-        <script src="js/ajaxProcessing.js"></script>
+   <script
+   src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+   integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+   crossorigin="anonymous"></script>
 
 
-        <!--METAS BELOW-->
-        <!--used to find the device width for various things-->
-        <meta name="viewport" content="width=device-width, initial-scale=1,
-        maximum-scale=1, user-scalable=no">
+   <!--MY LINKS BELOW-->
+   <!--link to the pages style sheet-->
+   <link rel="stylesheet" type="text/css" href="css/style.css">
 
-    </head>
+   <!--link to the js script for adding a hours form-->
+   <script src="js/addHrsForm.js"></script>
 
-    <body>
-
-        <!--the main container for the whole page-->
-        <div class="container-fluid"> 
-           
-            <div class="row mainRow">
-                
-                <div class="col-sm-6 addCol conColPad">
-                   
-                    <img src="img/logo.png" class="logo" alt="Hours Tracker Logo"> 
-
-                    <form style="margin-top:50px;"> 
-                        
-                        <div id="hrsContainer">
-
-                            <div class="form-group">
-
-                                <label for="daysDate0">The Days Date:</label>
-
-                                <input type="date" class="form-control" 
-                                    id="daysDate0" required>
-
-                            </div>
+   <!--link to the js script for adding a hours form-->
+   <script src="js/ajaxProcessing.js"></script>
 
 
-                            <div class="form-group row">
+   <!--METAS BELOW-->
+   <!--used to find the device width for various things-->
+   <meta name="viewport" content="width=device-width, initial-scale=1,
+   maximum-scale=1, user-scalable=no">
 
-                                <div class="col-sm-6">
+</head>
 
-                                    <label for="startTime0">Start Time:</label>
+<body>
 
-                                    <input type="time" class="form-control"
-                                        id="startTime0" required>
+<!--the main container for the whole page-->
+<div class="container-fluid">
 
-                                </div>
-                            
-                            
-                                <div class="col-sm-6">
+   <div class="row mainRow">
 
-                                    <label for="endTime0">End Time:</label>
+      <div class="col-sm-6 addCol conColPad">
 
-                                    <input type="time" class="form-control"
-                                        id="endTime0" required> 
+         <img src="img/logo.png" class="logo" alt="Hours Tracker Logo">
 
-                                </div>
-                            
-                            </div>
-                       
-                        </div>
+         <form style="margin-top:50px;">
 
-                        <br>
+            <div id="hrsContainer">
 
-                        <span class="glyphicon glyphicon-plus-sign addBtn" onclick="addForm()"> 
-                            </span>
-                        
-                        <button type="submit" value="submit" id="calcBtn" class="btn btn-default calcBtn"> 
-                            Calculate </button>
-                        
+               <div class="form-group">
+
+                  <label for="daysDate0">The Days Date:</label>
+
+                  <input type="date" class="form-control"
+                  id="daysDate0" required>
+
+               </div>
 
 
+               <div class="form-group row">
 
-                    </form>
+                  <div class="col-sm-6">
 
-                </div>
-                
-                <!--below div holds all the html for displaying the hours in various
-                    formats-->
-                <div class="col-sm-6 infoCol conColPad">
-               
-                    <p><b>Hours Tracker </b>is a very usefull web based application used
-                    to keep track of hours for anyone who tracks hours themselves such as
-                    frelancers or tradesme.<p>
+                     <label for="startTime0">Start Time:</label>
 
-                    <label for="week" style="margin-top:50px;">Hours This Week:</label>
-                    <div class="well well-sm" id="week"></div>
-                    
-                    <label for="month">Hours This Month:</label>
-                    <div class="well well-sm" id="month"></div>
-                    
+                     <input type="time" class="form-control" id="startTime0" required>
 
-                    <label for="year">Hours This Year:</label>
-                    <div class="well well-sm" id="year"></div>
-                    
-                    <label for="custom" class="custom">Custom Period:</label>
-                    <div class="well well-sm" id="custom">49:15</div>
-                    
-                    <form>
-
-                        <div class="form-group">
-
-                            <label for="startDate">Start Date:</label>
-
-                            <input type="date" name="daysDate" class="form-control" 
-                                id="startDate" required>
-
-                            <label for="endDate">endDate:</label>
-
-                            <input type="date" name="daysDate" class="form-control" 
-                                id="endDate" required>
-
-                        </div>
-
-                        <button type="submit" class="btn btn-default">Select
-                            Period</button>
-
-                    </form>
+                  </div>
 
 
-                </div>
+                  <div class="col-sm-6">
+
+                     <label for="endTime0">End Time:</label>
+
+                     <input type="time" class="form-control" id="endTime0" required>
+
+                  </div>
+
+               </div>
 
             </div>
-  
-      
-        </div>
 
-    </body>
+            <br>
+
+            <span class="glyphicon glyphicon-plus-sign addBtn" onclick="addForm()">
+            </span>
+
+            <button type="submit" value="submit" id="calcBtn" class="btn btn-default calcBtn">
+            Calculate </button>
+
+         </form>
+
+      </div>
+
+      <!--below div holds all the html for displaying the hours in various formats-->
+      <div class="col-sm-6 infoCol conColPad">
+
+
+         <p><b>Hours Tracker </b>is a very usefull web based application used
+         to keep track of hours for anyone who tracks hours themselves such as
+         frelancers or tradesme.<p>
+
+         <label for="week" style="margin-top:50px;">Hours This Week:</label>
+         <div class="well well-sm" id="week"></div>
+
+         <label for="month">Hours This Month:</label>
+         <div class="well well-sm" id="month"></div>
+
+
+         <label for="year">Hours This Year:</label>
+         <div class="well well-sm" id="year"></div>
+
+         <label for="custom" class="custom">Custom Period:</label>
+         <div class="well well-sm" id="custom">49:15</div>
+
+         <form>
+
+            <div class="form-group">
+
+               <label for="startDate">Start Date:</label>
+
+               <input type="date" name="daysDate" class="form-control"
+               id="startDate" required>
+
+               <label for="endDate">endDate:</label>
+
+               <input type="date" name="daysDate" class="form-control"
+               id="endDate" required>
+
+            </div>
+
+            <button type="submit" class="btn btn-default">Select
+            Period</button>
+
+         </form>
+
+
+      </div>
+
+   </div>
+
+
+</div>
+
+</body>
 
 </html>
 

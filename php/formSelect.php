@@ -1,7 +1,7 @@
 <?php
 //this page is used to select the data from the db and sends back yto be processed and
 //displayed on index.html
-    
+
 $servername = "192.168.0.200";
 $username = "root";
 $password = "Kingsford1";
@@ -10,7 +10,7 @@ $dbname = "hours_tracker";
 //creates the conection to db
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-//an associative array that holds the hours 
+//an associative array that holds the hours
 $hoursArray;
 
 //section for querying for the weeks hours
@@ -52,7 +52,7 @@ $hoursArray["yearsHours"] = $rowYear["yearsHours"];
 $conn->close();
 
 
-//returns the array as json 
+//returns the array as json
 echo json_encode($hoursArray);
 
 ?>

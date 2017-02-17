@@ -12,8 +12,8 @@ $(function() {
         data: "",
         dataType: "json",
         success: function(data){
-               
-        //inserts the returned data from the db to the index.html page 
+
+        //inserts the returned data from the db to the index.html page
         document.getElementById("week").innerHTML = data["weeksHours"];
         document.getElementById("month").innerHTML = data["monthsHours"];
         document.getElementById("year").innerHTML = data["yearsHours"];
@@ -23,16 +23,16 @@ $(function() {
     });
 
     $("#calcBtn").click(function() {
-        
+
         //alert(formSecCount+" fromSecCount");
-        
+
 
         //holds the compiled for data plus the count for the number of formSections
         var formData = "formSecCount=" + formSecCount + "&";
-        
+
 
         //runs through each section of the form sections for adding hours and compiles a
-        //string n the variable above of the the data for posting to the php 
+        //string n the variable above of the the data for posting to the php
         //processing page
         for(i = 0; i <= formSecCount; i++){
 
@@ -44,16 +44,16 @@ $(function() {
 
             var partFormData="daysDate" + i + "=" + date + "&startTime" + i + "=" + startTime
                 + "&endTime" + i + "=" + endTime;
-            
+
             //adds a & if there is more than one set of hours being added
-            (i != formSecCount)?  partFormData += "&" : partFormData += ""; 
-            
+            (i != formSecCount)?  partFormData += "&" : partFormData += "";
+
             formData += partFormData;
 
-            
+
             //alert(partFormData+" partFormData");
 
-        }   
+        }
 
         alert("POST DATA:" + formData);
 
@@ -63,8 +63,8 @@ $(function() {
             data: formData,
             dataType: "json",
             success: function(data){
-               
-               //inserts the returned data from the db to the index.html page 
+
+               //inserts the returned data from the db to the index.html page
                document.getElementById("week").innerHTML = data["weeksHours"];
                document.getElementById("month").innerHTML = data["monthsHours"];
                document.getElementById("year").innerHTML = data["yearsHours"];
@@ -77,7 +77,7 @@ $(function() {
         });
         //this stops page reload
         return false;
-        
+
     });
 
 });
