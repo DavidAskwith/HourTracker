@@ -1,9 +1,11 @@
 <?php
+//include("../../errors.php");
+//testing
+//echo "formInsert\n\n";
 //this file is used to calculate the hours and send them to the db
-
-$servername = "192.168.0.200";
+$servername = "localhost";
 $username = "root";
-$password = "Kingsford1";
+$password = "K1ngsford";
 
 //creates the conection to db
 $conn = new mysqli($servername, $username, $password);
@@ -12,11 +14,6 @@ $conn = new mysqli($servername, $username, $password);
 if ($conn->connect_error) {
    die("Connection Failed: " . $conn->connect_error . "\n");
 }
-
-
-//TESTING
-//echo "conection works\n";
-
 
 $formSecCount = $_POST["formSecCount"];
 
@@ -40,13 +37,14 @@ for($i = 0; $i <= $formSecCount; $i++){
       $endTime += 24;
    }
 
+//TODO: allows for calculation of minutes
    //calculates the hours worked
    $hoursWorked = $endTime - $startTime;
 
    //TESTING
    //echo "Hours Worked: $hoursWorked\n";
 
-   $sql = "INSERT INTO hours_tracker.hours
+   $sql = "INSERT INTO Hours_Tracker.hours
       (days_date,hours_worked)
       VALUES('$daysDate',$hoursWorked)";
 
@@ -56,7 +54,8 @@ for($i = 0; $i <= $formSecCount; $i++){
 
    } else {
 
-      echo "error: $sql $conn->error\n";
+      echo "formInsert";
+      echo "error: $sql $conn->error\n\n\n";
 
    }
 }

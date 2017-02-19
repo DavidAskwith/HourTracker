@@ -55,24 +55,34 @@ $(function() {
 
         }
 
-        alert("POST DATA:" + formData);
+        //alert("POST DATA:" + formData);
 
         $.ajax({
             type: "POST",
             url: "php/formInsert.php",
             data: formData,
-            dataType: "json",
+            dataType: 'JSON',
             success: function(data){
 
                //inserts the returned data from the db to the index.html page
+               alert("Json weeks hours: " + data["weeksHours"]);
                document.getElementById("week").innerHTML = data["weeksHours"];
                document.getElementById("month").innerHTML = data["monthsHours"];
                document.getElementById("year").innerHTML = data["yearsHours"];
 
-            },
-            error: function(){
-                alert("faccckkk");
+            },error: function(jqXHR, textStatus, errorThrown) {
+                alert('An error occurred... Look at the console (F12 or Ctrl+Shift+I, Console tab) for more information!');
+
+                $('#result').html('<p>status code: '+jqXHR.status+'</p><p>errorThrown: ' + errorThrown + '</p><p>jqXHR.responseText:</p><div>'+jqXHR.responseText + '</div>');
+                console.log('jqXHR:');
+                console.log(jqXHR);
+                console.log('textStatus:');
+                console.log(textStatus);
+                console.log('errorThrown:');
+                console.log(errorThrown);
+
             }
+
 
         });
         //this stops page reload
