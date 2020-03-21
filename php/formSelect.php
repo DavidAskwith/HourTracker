@@ -4,7 +4,7 @@
     
 $servername = "localhost";
 $username = "root";
-$password = "K1ngsford";
+$password = "";
 $dbname = "Hours_Tracker";
 
 //creates the conection to db
